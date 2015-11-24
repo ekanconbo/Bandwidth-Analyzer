@@ -38,7 +38,7 @@ public class Value {
 	}
 
 	private void GeneratePosition(String bandwidthType, String valueType){
-		if(bandwidthType.equals("TX"))
+		if(bandwidthType.equals("tx"))
 			profilePosition += 4;
 
 		if(valueType.equals("95%"))
@@ -56,7 +56,7 @@ public class Value {
 	}
 
 	private void GenerateBarchartPosition(String bandwidthType, String valueType){
-		if(bandwidthType.equals("RX"))
+		if(bandwidthType.equals("rx"))
 			barchartPositionx += 1;
 
 		if(valueType.equals("95%"))

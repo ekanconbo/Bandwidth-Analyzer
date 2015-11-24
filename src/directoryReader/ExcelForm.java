@@ -40,7 +40,7 @@ public class ExcelForm {
 		this.circuitNum = circuitID.substring(circuitID.indexOf("-")+1, circuitID.indexOf("-")+5);
 		this.bwProfilePath = bwProfilePath;
 		this.barChartTemplatePath = barChartTemplatePath;
-		bwValues.addAll(Collections.nCopies(24, new Value())); //24 is the number of values to appear on a single line in the Excel Bandwidth Profile
+		bwValues.addAll(Collections.nCopies(24, new Value())); //24 is the number of values on a single line in the Excel Bandwidth Profile
 
 		InputStream input = new FileInputStream(bwProfilePath);
 
@@ -48,11 +48,11 @@ public class ExcelForm {
 		Sheet sheet = wb.getSheetAt(0);
 		int count = 0;
 		for(Row row : sheet){
-			if(row.getCell(6).getRichStringCellValue().getString().trim().equals(this.title)){
+			if(row.getCell(7).getRichStringCellValue().getString().trim().equals(this.title)){
 				this.excelRow = count;
-				this.billedBandwidth = row.getCell(2).getNumericCellValue();
-				this.circuitBandwidth = row.getCell(3).getNumericCellValue();
-				this.customerName = row.getCell(1).getStringCellValue();
+				this.billedBandwidth = row.getCell(3).getNumericCellValue(); //Assumes Billed Bandwidth is column 4
+				this.circuitBandwidth = row.getCell(4).getNumericCellValue(); //Assumes Circuit Bandwidth is column 5
+				this.customerName = row.getCell(2).getStringCellValue(); //Assumes Customer is column 3
 			}
 			count++;
 		}
@@ -92,7 +92,7 @@ public class ExcelForm {
 		}
 	}
 
-	//Writes relevant data to Bandwidth Profile
+	//Writes relevant data to Bandwidth Profile.
 	public void WriteLine() throws Exception{
 		InputStream input = new FileInputStream(bwProfilePath);
 		Workbook wb = WorkbookFactory.create(input);
@@ -100,15 +100,15 @@ public class ExcelForm {
 		for(Value value : bwValues){
 			if(excelRow != 0){
 				if(!value.value.equals("N/A") && !value.valueType.equals("time")){
-					sheet.getRow(excelRow).getCell(25+value.profilePosition).setCellValue(Double.parseDouble(value.value));
-					sheet.getRow(excelRow).getCell(25+value.profilePosition).setCellType(Cell.CELL_TYPE_NUMERIC);
+					sheet.getRow(excelRow).getCell(26+value.profilePosition).setCellValue(Double.parseDouble(value.value));
+					sheet.getRow(excelRow).getCell(26+value.profilePosition).setCellType(Cell.CELL_TYPE_NUMERIC);
 				}
 				else if(!value.value.equals("N/A")){
-					sheet.getRow(excelRow).getCell(25+value.profilePosition).setCellValue(Double.parseDouble(value.value)/100);
-					sheet.getRow(excelRow).getCell(25+value.profilePosition).setCellType(Cell.CELL_TYPE_NUMERIC);
+					sheet.getRow(excelRow).getCell(26+value.profilePosition).setCellValue(Double.parseDouble(value.value)/100);
+					sheet.getRow(excelRow).getCell(26+value.profilePosition).setCellType(Cell.CELL_TYPE_NUMERIC);
 				}
 				else
-					sheet.getRow(excelRow).getCell(25+value.profilePosition).setCellValue(value.value);
+					sheet.getRow(excelRow).getCell(26+value.profilePosition).setCellValue(value.value);
 
 			}
 		}

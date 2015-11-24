@@ -3,13 +3,13 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="Resources"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
-	<classpathentry kind="lib" path="C:/Users/Justin/Downloads/jsoup-1.8.3.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Justin/Downloads/poi-3.12-20150511.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Justin/Downloads/poi-ooxml-3.12-20150511.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Justin/Downloads/xmlbeans-2.6.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Justin/Downloads/poi-scratchpad-3.12-20150511.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Justin/Downloads/poi-ooxml-schemas-3.12-20150511.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Justin/Downloads/poi-excelant-3.12-20150511.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Justin/Downloads/poi-examples-3.12-20150511.jar"/>
+	<classpathentry kind="lib" path="L:/Documentation/BW 2015/bw/Bandwidth Analysis libraries/opencsv-3.5.jar"/>
+	<classpathentry kind="lib" path="L:/Documentation/BW 2015/bw/Bandwidth Analysis libraries/poi-3.13/poi-3.13-20150929.jar"/>
+	<classpathentry kind="lib" path="L:/Documentation/BW 2015/bw/Bandwidth Analysis libraries/poi-3.13/poi-examples-3.13-20150929.jar"/>
+	<classpathentry kind="lib" path="L:/Documentation/BW 2015/bw/Bandwidth Analysis libraries/poi-3.13/poi-excelant-3.13-20150929.jar"/>
+	<classpathentry kind="lib" path="L:/Documentation/BW 2015/bw/Bandwidth Analysis libraries/poi-3.13/poi-ooxml-3.13-20150929.jar"/>
+	<classpathentry kind="lib" path="L:/Documentation/BW 2015/bw/Bandwidth Analysis libraries/poi-3.13/poi-ooxml-schemas-3.13-20150929.jar"/>
+	<classpathentry kind="lib" path="L:/Documentation/BW 2015/bw/Bandwidth Analysis libraries/poi-3.13/poi-scratchpad-3.13-20150929.jar"/>
+	<classpathentry kind="lib" path="L:/Documentation/BW 2015/bw/Bandwidth Analysis libraries/poi-3.13/ooxml-lib/xmlbeans-2.6.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

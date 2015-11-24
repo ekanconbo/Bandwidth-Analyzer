@@ -14,6 +14,8 @@ public class PropertyValues {
 	String directory;
 	String bar_chart_template;
 	String bandwidth_profile;
+	
+	boolean generate_list;
 	boolean generate_txt;
 	boolean write_to_profile;
 	boolean generate_bar_chart;
@@ -36,6 +38,7 @@ public class PropertyValues {
 			this.directory = properties.getProperty("directory");
 			this.bar_chart_template = properties.getProperty("bar_chart_template");
 			this.bandwidth_profile = properties.getProperty("bandwidth_profile");
+			this.generate_list = Boolean.valueOf(properties.getProperty("generate_list"));
 			this.generate_txt = Boolean.valueOf(properties.getProperty("generate_txt"));
 			this.write_to_profile = Boolean.valueOf(properties.getProperty("write_to_profile"));
 			this.generate_bar_chart = Boolean.valueOf(properties.getProperty("generate_bar_chart"));
